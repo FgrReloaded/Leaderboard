@@ -644,6 +644,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const leaderboardBody = document.getElementById('leaderboard-body');
         const sectionFilter = document.getElementById('section-filter');
         const residenceFilter = document.getElementById('residence-filter');
+        const searchInput = document.getElementById('search-input');
+
+        searchInput.addEventListener('change', (e) => {
+            console.log(e.target.value);
+            const value = e.target.value.toLowerCase();
+            const searchData = filteredData.filter(student => student.name.toLowerCase().includes(value));
+            renderLeaderboard(searchData);
+        })
 
         const populateSectionFilter = () => {
             const sections = [...new Set(data.map(student => student.section || 'N/A'))].sort();
