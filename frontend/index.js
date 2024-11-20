@@ -709,7 +709,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             leaderboardBody.innerHTML = '';
             sortedData.forEach((student, index) => {
                 const row = document.createElement('tr');
-                row.classList.add('border-b', 'border-gray-700');
+                row.classList.add('border-b', 'border-gray-700', 'hover:bg-gray-700');
                 row.innerHTML = `
                     <td class="p-4">${index + 1}</td>
                     <td class="p-4">${student.roll}</td>
